@@ -37,10 +37,10 @@ test_X = [x[0].strip() for x in X_test.tolist()]
 
 # Create pipeline for the classifier
 classifier = Pipeline([('tfidf', TfidfVectorizer(analyzer='word', binary=False, decode_error='strict',
-        										lowercase=True, max_df=0.25, max_features=None, min_df=10,
-        										ngram_range=(1, 2), norm='l2', preprocessor=None, smooth_idf=True,
-        										stop_words='english', strip_accents=None, sublinear_tf=False, use_idf=True)),
-		             							('classifier', OneVsRestClassifier(LinearSVC(), n_jobs=1))])
+        		lowercase=True, max_df=0.25, max_features=None, min_df=10,
+        		ngram_range=(1, 2), norm='l2', preprocessor=None, smooth_idf=True,
+        		stop_words='english', strip_accents=None, sublinear_tf=False, use_idf=True)),
+		        ('classifier', OneVsRestClassifier(LinearSVC(), n_jobs=1))])
 # Fit the classifier to the training set
 classifier.fit(train_X, y_train)
 
